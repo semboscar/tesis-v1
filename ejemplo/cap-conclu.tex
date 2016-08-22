@@ -1,0 +1,21 @@
+\chapter[]{}
+\label{ch:conclu}
+
+\section{Conclusión}
+
+Hoy en día el protocolo IP se ha transformado en la columna vertebral de las redes mundiales, pero por sobre todo internet. Este protocolo, junto a una importante normalización realizada por la IETF es que los estándares como 6LoWPAN dan cabida a que los dispositivos inalámbricos de bajo consumo puedan conectarse a internet, como cualquier otra máquina y formar un entorno participativo, lo que simplificaría enormemente la integración de las distintas tecnologías inalámbricas de bajo consumo en un sistema más complejo.
+
+Las tecnologías de bajo consumo TSCH han probado ser capaces de satisfacer los estrictos requisitos de las aplicaciones industriales, por lo tanto han logrado convertirse en parte fundamental de los estándares “WirelessHART”, “ISA100.11a”, y IEEE802.15.4e.
+
+El objetivo de estas estandarizaciones es reducir el espacio entre las mas modernas redes TSCH y el estándar IETF, además de lograr que las redes inalámbricas sean capaces no solo de ser inalámbricas, sino también usar el protocolo IP versión 6, lo que abre una nueva forma de implementar redes TSCH. La implementación del protocolo IP versión 6 en una red TSCH da origen a las redes 6TiSCH. Con esto, las aplicaciones industriales se enfocarán en integrar la información extraída de distintos equipos, monitorear las tecnologías de operaciones, y permitir el uso de un modelo de capas común para permitir la comunicación ininterrumpida entre distintos equipos de distinta naturaleza, desde enormes equipos industriales, hasta pequeños nodos inalámbricos, todo esto dentro de una sola malla.
+
+Para comenzar a trabajar con el protocolo 6TiSCH, se hizo necesario conocer sus capacidades, fortalezas y debilidades. Es por esto, que se trabajó con un simulador, que permitió estudiar el comportamiento del protocolo bajo un escenario. Se usaron distintas configuraciones para comparar las diferencias en el desempeño del simulador bajo un mismo escenario.
+
+Luego de haber realizado la simulación utilizando 6TiSCH simulator, se obtuvo información importante respecto al funcionamiento y el desempeño del sistema de asignación de celdas en una malla de sensores. Esta información consistente en gráficas, se agrupó, y se comparó según las distintas configuraciones para un mismo evento.
+
+
+Analizando la información obtenida, es posible comprender que tanto las topologías, cómo las configuraciones de los nodos influyen directamente en como la información es propagada hacia la fuente. Cuando nos enfocamos en el comportamiento de la latencia, es posible notar que aumenta directamente según la cantidad de nodos presentes en la malla. Por otro lado, cuando analizamos el tamaño de las colas de los sensores, se aprecia que una cola muy extensa aumenta la latencia final, además de requerir mas operaciones de eliminación. Por otro lado, una cola muy corta exige eliminar y reasignar continuamente celdas nuevas, lo que implica un alto consumo energético, reduciendo la vida de las baterías.
+
+Es necesario ajustar los parámetros de los nodos a cada requerimiento, para conseguir el desempeño más cercano al óptimo. Esto se consigue estudiando el escenario que se utilizará, además de realizar mediciones de cobertura, interferencia, relación señal ruido.
+
+Se espera que este trabajo investigación culmine con la obtención de un algoritmo de asignación de celdas con mejor desempeño respecto a los existentes hoy en día.

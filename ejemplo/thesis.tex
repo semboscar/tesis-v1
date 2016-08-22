@@ -1,0 +1,204 @@
+% Ejemplo del uso de la template para escribir tesis/memorias de la Universidad Diego Portales.
+%
+% Eviar bugs a: Adín Ramírez, adin.ramirez (at) mail.udp.cl
+
+% Puede generar borradores si omite la opción "final" de la clase.
+% \documentclass{udpthesis}
+\documentclass[final]{udpthesis}
+
+% Establecemos el sistema para uso del español
+% Babel ya esta cargado dentro de updthesis
+\usepackage[T1]{fontenc}%    output
+\usepackage[utf8]{inputenc}% input
+\usepackage{lmodern}
+
+% Leyendas
+\usepackage[font=footnotesize,labelfont=bf,labelsep=period]{caption}
+
+% Agregue acá otros paquetes que le sean de utilidad
+% Matemáticas
+\usepackage{amsmath}
+
+% Gráficos
+\usepackage{graphicx}
+\usepackage[font=footnotesize,labelformat=simple]{subfig}
+% Cambiamos el formato de las leyendas: finalizan en punto, y en negrita.
+\captionsetup{labelsep=period,labelfont=bf}
+% Habilitamos el uso de paréntesis al citar las figuras con subfiguras dentro, e.g., Fig. 1(a)
+\renewcommand\thesubfigure{(\alph{subfigure})}
+\renewcommand\thesubtable{(\alph{subtable})}
+\newcommand{\subfigureautorefname}{\figureautorefname}
+
+% Código
+% Para generar código fuente usar listings.sty
+%\usepackage{listings}
+%\usepackage{tikz}
+%\lstset{
+%  language=[LaTeX]TeX,
+%  breaklines=true,
+%  basicstyle=\tt\scriptsize,
+%  keywordstyle=\color{blue},
+%  identifierstyle=\color{magenta},
+%  commentstyle=\color{green!40!black},
+%  % frame 
+%  frame=tb,
+%  captionpos=t,
+%  xleftmargin=1em,
+%  numbersep=0.3em,
+%  numbers=left,
+%  framexleftmargin=1.1em,
+%  framexrightmargin=0pt,
+%  % additional letters for accents in spanish
+%  literate=%
+%    {á}{{\'{a}}}1
+%    {é}{{\'{e}}}1
+%    {í}{{\'{i}}}1
+%    {ó}{{\'{o}}}1
+%    {ú}{{\'{u}}}1
+%    {ñ}{{\~{n}}}1
+%    {Ñ}{{\~{N}}}1
+%}
+%
+%\renewcommand{\lstlistingname}{Código}% Listing -> Código
+%\DeclareCaptionFormat{listing}{\rule{\dimexpr\linewidth\relax}{0.4pt}\par\vskip1pt#1#2#3}
+%\captionsetup[lstlisting]{format=listing,singlelinecheck=false, margin=0pt,position=bottom}
+
+% O para generar algoritmos en pseudocódigo usar algpseudocode.sty
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+%\makeatletter
+%\renewcommand{\ALG@name}{Algoritmo}% Algorithm -> Algoritmo
+%\makeatother
+%\captionsetup[algorithm]{font=footnotesize,labelsep=period}
+
+% Referencias (este paquete ordena y comprime las referencias)
+\usepackage{cite}
+
+% Un paquete para generar texto. REMUEVA ESTE PAQUETE AL UTILIZAR ESTA PLANTILLA.
+\usepackage{blindtext}
+
+
+% Establecemos el tema a utilizar. 
+% Debe existir el archivo udpthesisEIT.sty en su sistema TeX para poder utilizarlo.
+% Por ejemplo, para utilizar el tema de magíster de la EIT deben de utilizar
+% \udptheme{EIT-MS}
+\udptheme{EIT}
+
+\newcommand{\dd}[1] {\textbf{\textcolor{blue}{[dd:] #1}}}
+\newcommand{\os}[1] {\textbf{\textcolor{red}{[os:] #1}}}
+
+\begin{document}
+%% Inicio de la portada
+\frontmatter
+
+% Título del tema (no más de 12 palabras)
+\title{Diseño e implementación de algoritmo de asignación dinámica de celdas para la Internet Industrial de las Cosas}
+% para precisar aún más su tema, use un subtítulo
+%\subtitle{Subtítulo explicativo del tema}
+
+% El autor(es) de la tesis
+\author{Oscar Leonardo Solis}
+\email{oscar.solis@mail.udp.cl}% utilice un correo que revise después de graduado
+
+% o una lista de autores separados con comas
+%\author{Juan Bar, José Foo}
+%\email{juan.bar@mail.udp.cl, jose.foo@mail.udp.cl}
+
+% Fecha a aparecer en la tesis
+\date{2016}
+
+% Profesor guía
+\professor{Diego Dujovne}
+% Comité
+\committee{Luis Loyola}{Luciano Ahumada}
+
+% Dedicatoria
+\dedicatory{Dedicado a todas las personas que se han cruzado en mi camino, a pesar de que algunas ya no estén, y que directa o indirectamente han participado en mi proceso de formación.}
+
+% Agradecimientos
+\acknowledgment{Quiero agradecer a mi familia, amigos, y profesores.}
+
+% Abstract en inglés
+\abstract{%<- evita nueva linea en el abstract
+This first stage presents a study of the state of the art in wireless sensors area, which are being increasingly used in industries and factories, in a lot of different applications. The use of this kind of sensors has been exponentially growing according to the complexity of industrial processes.
+
+Wireless networks are an emerging field that encompasses the development of different areas of information technologies, telecommunications, and inclusion of different disciplines such as agriculture, medicine, biology, mechanics, etc. Components, topologies, standards, applications, difficulties and possible solutions: key concepts are addressed.
+
+When someone decides to use a wireless network, the decision is taken hoping its features must be equal or greater than a wired network, so this is the basis for deciding to use a wireless network. This implies that one must have wired network standards such robustness, latencies within acceptable parameters, and also the benefits of a wireless network, such as the need for flexibility and minimal maintenance.
+
+In this chapter we will work with those based on TSCH wireless networks. Industrial application networks whose architecture allows adjusting the distribution of resources as frequency and time. Because the operating environment of these networks is hostile, and constantly changing, these resources must be constantly adjusted to new conditions.
+
+The scope of this present work is to propose an improvement to the scheduling function zero (SF0) which is based on neighbor to neighbor scheduling method.
+
+
+
+}
+% Resumen
+\resumen{%<- evita nueva linea en el resumen 
+Esta primera etapa presenta un estudio sobre el estado del arte en el área de sensores inalámbricos, cuya utilización ha ido creciendo exponencialmente a medida que se han vuelto mas complejos los procesos industriales.
+
+Las redes inalámbricas conforman un campo emergente que engloba el desarrollo de distintas áreas de las tecnologías de la información, telecomunicaciones, e inclusión de distintas disciplinas como la agricultura, medicina, biología, mecánica, etc. Se abordarán los siguientes conceptos principales: componentes, topologías, estándares, aplicaciones, dificultades y posible soluciones.
+
+A la hora de decidir si utilizar una red inalámbrica, se debe tener presente que sus características deben ser iguales, o superiores a las de una red cableada, por lo tanto esta es la base para decidir utilizar una red inalámbrica. Esto implica que se debe cumplir con los estándares de una red cableada como la robustez, latencias dentro de parámetros aceptables, y además de los beneficios de una red sin cables, como son la flexibilidad y la necesidad de mantenimiento mínimo.
+
+En este capítulo se trabajará con las redes inalámbricas basadas en la tecnología "Time Slotted Channel Hopping" (TSCH por sus siglas en inglés), de aplicación industrial y cuya arquitectura permite ajustar la distribución de los recursos como frecuencia y tiempo. Dado que el entorno de funcionamiento de estas es cambiante y hostil, estos recursos deben estar constantemente ajustándose a las nuevas condiciones. Este trabajo tiene como objetivo proponer una solución a esta asignación dinámica de recursos.
+
+Este trabajo de investigación tiene como objetivo proponer una mejora a la función de calendarización cero (SF0) la cual se basa en el método de calendarización ``vecino a vecino''.
+
+
+}
+
+% Generamos la portada
+\makecover
+
+% Indices y listas
+\tableofcontents% tabla de contenido
+\listoftables%    índice de tablas
+\listoffigures%   índice de figuras
+% puede agregar otras listas o índices acá de ser necesario
+
+
+
+% Inicio del contenido
+\mainmatter
+
+% Capítulos y secciones del documento
+% Aca se incluyen los archivos con el texto de los capitulos
+% Incluyo el archivo cap-intro.tex
+\input{cap-intro}
+% Incluyo el archivo cap-tema.tex
+\input{cap-tema}
+% incluya otros archivos según su necesidad
+% \input{archivo}
+\input{cap-conclu}
+
+
+% Iniciamos el resto de secciones adicionales al contenido: referencias y apendices
+\backmatter
+
+
+% Bibliografía
+% referencias.bib es el archivo con la base de datos bibliografica
+% se recomienda utilizar un manejador de referencias: Jabref (jabref.sourceforge.net)
+% El estilo por defecto es IEEE Transactions
+\bibliographystyle{IEEEtran}
+% Acá puede incluir uno más archivos de referencia
+\bibliography{IEEEabrv,referencias}
+
+
+% Simbología y glosario
+% Utilice un paquete para generar símbolos y glosarios.
+% Por ejemplo: nomencl (http://texdoc.net/pkg/nomencl)
+
+
+% Anexos
+\appendix
+
+% Aca se incluyen los archivos con el texto de los anexos
+% Por ejemplo, anexo.tex
+\input{anexo}
+% puede incluir más archivos de anexos
+% \input{anexo-dos}
+
+\end{document}
+% that's all folks
